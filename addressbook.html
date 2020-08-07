@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Address Book Management</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./abStyle.css">
+
+</head>
+<body background="bg1.jpg">
+	<div class="abContainer">
+		<div class="abPage">
+			<div class="abHeading">
+				<p class="heading">ADDRESS BOOK MANAGEMENT</p>
+			</div>
+			<div class="searchSortDiv">
+				<input type="text" class="abSearch" name="search" id="search" placeholder="Search Person" />
+				<select class="abSortBy">
+					<option value="" disabled selected>Sort By</option>
+					<option>Name</option>
+					<option>City</option>
+					<option>State</option>
+					<option>Zip</option>
+				</select>
+			</div>
+			<div class="abBody">
+				<div class="formDiv">
+					<form name="abForm" action="#">
+						<div class="formHeading">Enter Person Details</div>
+						<div class="inpDiv">
+							<input type="text" onblur="validateFirstName(this.value)" class="inpField" name="fname" id="fname" title="Ex: Shubham" placeholder="Enter First Name*" required /><span id="warnFname"></span>
+						</div>
+
+						<div class="inpDiv">
+							<input type="text" onblur="validateLastName(this.value)" class="inpField" name="lname" id="lname" title="Ex: Pattar" placeholder="Enter Last Name*" required /><span id="warnLname"></span>
+						</div>
+
+						<div class="inpDiv">
+							<input type="number" onblur="validatePhone(this.value)" class="inpField" name="phone" id="phone" title="10 digits Only" placeholder="Enter Phone Number*" required/><span id="warnPhone"></span>
+						</div>
+
+						<div class="inpDiv">
+							<textarea placeholder="Enter Address*" rows="4" class="inpField" name="address" id="address" title="Enter Address" required></textarea>
+						</div>
+
+						<div class="inpDiv">
+							<input type="text" onblur="validateCity(this.value)" class="inpField" name="city" id="city" title="Enter City" placeholder="Enter City*" required/><span id="warnCity"></span>
+						</div>
+
+						<div class="inpDiv">
+							<select id="state" title="Select State" class="inpField" required>
+								<option value="" disabled selected>Select State</option>
+								<option>Karnataka</option>
+								<option>Maharashtra</option>
+								<option>Andra Pradesh</option>
+								<option>Telangana</option>
+							</select>
+						</div>
+
+						<div class="inpDiv">
+							<input type="number" title="6 Digit Zip Code" onblur="validateZip(this.value)" class="inpField" name="zip" id="zip" placeholder="Enter Zip*" />
+							<span id="warnZip"></span>
+						</div>
+
+						<div class="abButtonField">
+							<div class="btnSaveDiv">
+								<input type="submit" onclick="funAlert(this.value)" class="abSaveBtn" name="save" id="save" value="Save"/>
+							</div>
+							&nbsp;
+							<div class="btnResetDiv">
+								<input type="reset" class="abResetBtn" name="reset"/>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="contentDiv">
+					<table>
+						<thead>
+							<tr>
+							<th>Sl No.</th>
+							<th>FIRST NAME</th>
+							<th>LAST NAME</th>
+							<th>PHONE</th>
+							<th>ADDRESS</th>
+							<th>CITY</th>
+							<th>STATE</th>
+							<th>ZIP</th>
+							<th class="thAction">ACTION</th>
+						</tr>
+						</thead>
+						<tbody>
+							<tr>
+							<td>1</td>
+							<td>Shubham</td>
+							<td>Pattar</td>
+							<td>8105215414</td>
+							<td>Badiger Galli</td>
+							<td>Jamkhandi</td>
+							<td>Karnataka</td>
+							<td>587301</td>
+							<td class="thAction">
+								<button class="btnEdit" id="editBtn">Edit</button>
+								<button class="btnDelete" id="delBtn">Delete</button>
+							</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Ankit</td>
+							<td>Shah</td>
+							<td>9999999999</td>
+							<td>Badiger Galli</td>
+							<td>Indi</td>
+							<td>Karnataka</td>
+							<td>587444</td>
+							<td class="thAction">
+								<button class="btnEdit" id="editBtn">Edit</button>
+								<button class="btnDelete" id="delBtn">Delete</button>
+							</td>
+						</tr>
+						</tbody>
+						
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="myModal" class="modal">
+
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <div class="modal-header">
+	      <span class="close">&times;</span>
+	      <h2>EDIT PERSON DETAILS</h2>
+	    </div>
+	    <form name="abForm" action="#">
+			<div class="inpDiv">
+				<input type="text" onblur="validateFirstName(this.value)" class="inpField" name="fname" id="fname" title="Ex: Shubham" placeholder="Enter First Name*" required /><span id="warnFname"></span>
+			</div>
+
+			<div class="inpDiv">
+				<input type="text" onblur="validateLastName(this.value)" class="inpField" name="lname" id="lname" title="Ex: Pattar" placeholder="Enter Last Name*" required /><span id="warnLname"></span>
+			</div>
+
+			<div class="inpDiv">
+				<input type="number" onblur="validatePhone(this.value)" class="inpField" name="phone" id="phone" title="10 digits Only" placeholder="Enter Phone Number*" required/><span id="warnPhone"></span>
+			</div>
+
+			<div class="inpDiv">
+				<textarea placeholder="Enter Address*" rows="4" class="inpField" name="address" id="address" title="Enter Address" required></textarea>
+			</div>
+
+			<div class="inpDiv">
+				<input type="text" onblur="validateCity(this.value)" class="inpField" name="city" id="city" title="Enter City" placeholder="Enter City*" required/><span id="warnCity"></span>
+			</div>
+
+			<div class="inpDiv">
+				<select id="state" title="Select State" class="inpField" required>
+					<option value="" disabled selected>Select State</option>
+					<option>Karnataka</option>
+					<option>Maharashtra</option>
+					<option>Andra Pradesh</option>
+					<option>Telangana</option>
+				</select>
+			</div>
+
+			<div class="inpDiv">
+				<input type="number" title="6 Digit Zip Code" onblur="validateZip(this.value)" class="inpField" name="zip" id="zip" placeholder="Enter Zip*" />
+				<span id="warnZip"></span>
+			</div>
+
+			<div class="abButtonField">
+				<div class="btnSaveDiv">
+					<input type="submit" class="abSaveBtn" name="save" id="save" value="Save Edit"/>
+				</div>
+				&nbsp;
+				<div class="btnResetDiv">
+					<input type="reset" class="abResetBtn" name="reset"/>
+				</div>
+			</div>
+		</form>
+	  </div>
+	</div>
+</body>
+</html>
+
+<script src="./modal.js"></script>
+<script src="./validateInputs.js"></script>

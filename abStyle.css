@@ -1,0 +1,335 @@
+.abContainer{
+	display: flex;
+	width: 96%;
+	margin: 2%;
+	flex-direction: column;
+}
+
+.abPage{
+	align-self: center;
+	background-color: #fff;
+	margin: 1%;
+	width: 100%;
+	flex-direction: column;
+	border-radius: 10px;
+	box-shadow: 0px 0px 20px;
+	background: url("./bg2.jpg");
+    background-size: cover;
+}
+
+.searchSortDiv{
+	text-align: right;
+	flex-direction: row;
+}
+
+.abSearch{
+	outline: none;
+}
+
+.abSortBy{
+	outline: none;
+}
+.abHeading{
+	width: 75%;
+	text-align: center;
+	margin-left: 12.5%;
+}
+
+.heading{
+	font-family: arial;
+	font-weight: bold;
+	color: #fff;
+	font-size: 150%;
+}
+
+.abBody{
+	display: flex;
+	direction: row;
+}
+
+.formDiv{
+	width: 40%;
+	box-shadow: 0px 0px 5px;
+}
+
+.formHeading{
+	color: yellow;
+	text-align: center;
+	margin-top: 3%;
+}
+
+.inpDiv{
+	margin: 4%;
+}
+
+.inpField{
+	width: 95%;
+	height: 1.8rem;
+	max-width: 95%;
+	border-width: 1px; 
+	border-radius: 4px;
+	background-color: #fff;
+	padding-left: 3%;
+	outline: none;
+}
+
+.inpField:hover{
+	outline-width: 3px;
+	outline-color: green;
+}
+
+.warnTxt{
+	font-family: arial;
+	font-size: 0.7rem;
+	color: red;
+}
+
+.abButtonField{
+	display: flex;
+	width: 100%;
+	margin: 4%;
+	direction: row;
+}
+
+.btnSaveDiv{
+	width: 44%;
+}
+
+.abSaveBtn{
+	width: 100%;
+	height: 2rem;
+	border: none;
+	border-radius: 4px;
+	background-color: #1ce645;
+	box-shadow: 0 0 3px;
+	transition: 0.3s;
+}
+
+.abSaveBtn:hover{
+	background-color: #089e37;
+	box-shadow: 0px 1px 3px 1px;
+}
+
+.btnResetDiv{
+	width: 44%;
+}
+
+.abResetBtn{
+	width: 100%;
+	height: 2rem;
+	border: none;
+	border-radius: 4px;
+	background-color: #20c2e3;
+	box-shadow: 0 0 3px;
+	transition: 0.3s;
+}
+
+.abResetBtn:hover{
+	background-color: #2082e3;
+	box-shadow: 0px 1px 3px 1px;
+}
+
+.contentDiv{
+	width: 60%;
+	margin-right: 0.1%;
+	overflow-x: auto;
+	box-shadow: 0px 0px 5px;
+}
+
+.btnEdit{
+	background-color: lightgreen;
+	border: none;
+}
+
+.btnDelete{
+	background-color: #f73939;
+	color: white;
+	border: none;
+}
+
+button{
+	padding: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 150%;
+  border: 1px solid #ddd;
+}
+
+th{
+	background-color: lightblue;
+	color: #000;
+}
+
+td{
+	color: #fff;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+  font-family: arial;
+  font-size: 15px;
+}
+
+/*tr:nth-child(even){background-color: #f2f2f2}*/
+
+/*FOR SMALL SCREENS*/
+@media screen and (max-width: 800px)
+/*@media(max-width: 700px)*/{
+		.abPage{
+		align-self: center;
+		background-color: #fff;
+		margin: 1%;
+		width: 90%;
+		flex-direction: column;
+		box-shadow: 0px 0px 10px;
+	}
+		.abHeading{
+		width: 100%;
+		text-align: center;
+		margin-left: 0%;
+	}
+		.heading{
+		font-family: arial;
+		font-weight: bold;
+		font-size: 100%;
+	}
+
+	.abButtonField{
+	display: flex;
+	width: 100%;
+	margin: 4%;
+	flex-direction: column;
+	}
+	.btnSaveDiv{
+	width: 92%;
+	}
+
+	.btnResetDiv{
+	width: 92%;
+	}
+
+	table {
+	  border-collapse: collapse;
+	  border-spacing: 0;
+	  width: 160%;
+	  border: 1px solid #ddd;
+	  font-size: 12px;
+	}
+
+	th{
+		background-color: lightblue;
+		color: #000;
+	}
+
+	td{
+		color: #fff;
+	}
+	th, td {
+	  text-align: left;
+	  padding: 5px;
+	  font-family: arial;
+	}
+	.btnEdit{
+		background-color: lightgreen;
+		border: none;
+		font-size: 15px;
+	}
+
+	.btnDelete{
+		background-color: #f73939;
+		color: white;
+		border: none;
+		font-size: 15px;
+	}
+
+	button{
+		padding: 1px;
+	}
+	.thAction{
+		width: 80px;
+	}
+}
+
+
+
+
+/*Modal Style*/
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  margin-left: 25%;
+  margin-top: 2%;
+  width: 50%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
